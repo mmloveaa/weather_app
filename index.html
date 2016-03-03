@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Weather App
+
+    </title>
+
+    <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+
+    <section id='header'>
+    <div class="container">
+        <div class="jumbotron">
+          <img id='cover'>
+            <h1>Weather App</h1>
+        </div>
+
+        <form class="form-inline">
+          <div class="form-group">
+            <label for="">Enter city: </label>
+            <input type="text" id='input' class="form-control"  placeholder="city">
+          </div>
+          <button id="getforecast" class="btn btn-default">Get Forecast</button>
+        </form>       
+        <br>
+    </div>
+  </section>
+          <h2 id="title">Current Weather</h2>
+          <br>
+  <section id="content">
+    <div class="container">
+          <div id="currentWeather" class="col-sm-12 col-xs-12">
+          </div>
+    </div>
+            <div id="leftSide" class="row">
+
+                <!-- template -->
+                <div class="col-xs-3" id="weatherTemplate">
+                  <p> <span class="cityname"></span></p>
+                  <br>
+                  <img class="weathericon"/>
+                  <p style="color: blue;"><span class="weatherdescription"></span></p>
+                  <br>
+                  <p>Temp : <span class="temp"></span></p>
+                  <p>Max Temp : <span class="tempmax"></span></p>
+                  <p>Min Temp : <span class="tempmin"></span></p>
+                  <br>
+                  <p>Humidity : <span class="humidity"></span></p>
+                  <button type="submit" class="removeforecast" class="btn btn-default">Remove Forecast</button>
+                  <button type="submit" class="viewDetails" class="btn btn-default">View Details</button>
+                </div>
+            </div>
+    </div>
+  </section>
+
+  <section>
+    <div id="forecast" class="col-sm-12 col-xs-12">
+          <h2 id="title">3-Day Forecast</h2>
+          <br>
+          <div class="row">
+            <div id="day1" class="col-xs-4">
+              <p class="dayOfWeek"></p>
+              <p class="typeWeather"></p>
+              <img>
+              <p class="high"></p>
+              <p class="low"></p>
+            </div>
+            <div id="day2" class="col-xs-4">
+              <p class="dayOfWeek"></p>
+              <p class="typeWeather"></p>
+              <img>
+              <p class="high"></p>
+              <p class="low"></p>
+            </div>
+            <div id="day3" class="col-xs-4">
+              <p class="dayOfWeek"></p>
+              <p class="typeWeather"></p>
+              <img>
+              <p class="high"></p>
+              <p class="low"></p>
+            </div>
+          </div>
+  </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <script src="main.js"></script>
+  </body>
+</html>

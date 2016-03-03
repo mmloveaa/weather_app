@@ -1,0 +1,66 @@
+#header {
+	margin-top: 0px;
+	background-color: #cdf7f4;
+}
+
+.jumbotron{
+	background-color: #cdf7f4;
+}
+	/*background-image: "http://www.cyprus.com/images/practical-information/cyprus-weather.jpg"*/
+
+
+#title{
+	text-align: center;
+	font-weight: bold;
+}
+
+body {
+  background-color: #f2f2a4
+}
+
+
+h1 {
+	text-align: center;
+	font-family: Indie+Flower;
+}
+#getforecast {
+	background-color: lightblue;
+}
+
+#content{
+	background-color: #f2f2a4;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+
+.card {
+	border: 3px solid #000;
+	display: inline-block;
+	background-color: white;
+	margin: 5px;
+	padding: 5px;
+	min-height: 350px;
+	/*min-width: 150px;*/
+	border-radius: 15px;
+}
+
+#weatherTemplate {
+	display: none;
+	text-align: center;
+	border-radius: 30%
+}
+
+#currentWeather{
+	margin: 0 auto;
+}
+
+.removeforecast{
+	background-color: #ce4c64;
+	color: white;
+}
+
+.removeforecast{
+	background-color: #ce4c64;
+	color: white;
+}
