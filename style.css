@@ -35,14 +35,17 @@ h1 {
 
 
 .card {
-	border: 3px solid #000;
 	display: inline-block;
+	padding: 3px;
+}
+
+.cardContainer {
+	display: inline-block;
+	border: 3px solid #000;
 	background-color: white;
-	margin: 5px;
-	padding: 5px;
 	min-height: 350px;
-	/*min-width: 150px;*/
 	border-radius: 15px;
+	padding: 5px;
 }
 
 #weatherTemplate {
@@ -61,4 +64,26 @@ h1 {
 	background-color: #46c948;
 	color: white;
 	float: right;
+}
+
+#detailsForNextDays{
+
+	display: none;
+	border: 3px solid #000;
+	display: inline-block;
+	background-color: white;
+	margin: 5px;
+	padding: 5px;
+	min-height: 250px;
+	min-width: 380px;
+	border-radius: 15px;
+}
+
+.verticalAlign {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.hidden {
+	display: none;
 }

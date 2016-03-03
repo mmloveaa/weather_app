@@ -20,76 +20,88 @@
     <div class="container">
         <div class="jumbotron">
           <img id='cover'>
-            <h1>Weather App</h1>
-        </div>
 
+          <div class="row">
+            <h1>Awesome Weather App</h1>
+        </div>
+        <br>
+      <div class="row text-center">
+        <div class="col-xs-12">
         <form class="form-inline">
           <div class="form-group">
             <label for="">Enter city: </label>
             <input type="text" id='input' class="form-control"  placeholder="city">
           </div>
           <button id="getforecast" class="btn btn-default">Get Forecast</button>
-        </form>       
+        </form> 
+      </div> <!--end column-->
+    </div> <!--end row-->
+        </div>      
         <br>
     </div>
   </section>
+          <br>
           <h2 id="title">Current Weather</h2>
           <br>
   <section id="content">
     <div class="container">
+      <div class="row text-center">
           <div id="currentWeather" class="col-sm-12 col-xs-12">
           </div>
+        </div>
     </div>
-            <div id="leftSide" class="row">
 
                 <!-- template -->
-                <div class="col-xs-3" id="weatherTemplate">
-                  <p> <span class="cityname"></span></p>
-                  <br>
-                  <img class="weathericon"/>
-                  <p style="color: blue;"><span class="weatherdescription"></span></p>
-                  <br>
-                  <p>Temp : <span class="temp"></span></p>
-                  <p>Max Temp : <span class="tempmax"></span></p>
-                  <p>Min Temp : <span class="tempmin"></span></p>
-                  <br>
-                  <p>Humidity : <span class="humidity"></span></p>
-                  <br>
-                  <button type="submit" class="removeforecast" class="btn btn-default">Remove Forecast</button> 
-                  <button type="submit" class="viewDetails" class="btn btn-default">View Details</button>
+                <div class="col-xs-4" id="weatherTemplate">
+                  <div class="cardContainer">
+                    <p> <span class="cityname"></span></p>
+                    <br>
+                    <img class="weathericon"/>
+                    <p style="color: blue;"><span class="weatherdescription"></span></p>
+                    <br>
+                    <p>Temp : <span class="temp"></span></p>
+                    <p>Max Temp : <span class="tempmax"></span></p>
+                    <p>Min Temp : <span class="tempmin"></span></p>
+                    <br>
+                    <p>Humidity : <span class="humidity"></span></p>
+                    <br>
+                    <button type="submit" class="removeforecast" class="btn btn-default">Remove Forecast</button> 
+                    <button type="submit" class="viewDetails" class="btn btn-default">View Details</button>
+                  </div>
                 </div>
-            </div>
     </div>
   </section>
 
   <section>
-    <div id="showforecast" class="col-sm-12 col-xs-12">
+    <div class="container">
+      <div class="row text-center">
+        <div id="showforecast" class="col-sm-12 col-xs-12 hidden">
+          <br>
           <h2 id="title">3-Day Forecast</h2>
           <br>
-          <div class="row">
-            <div id="day1" class="col-xs-4">
-              <p class="dayOfWeek"></p>
-              <p class="typeWeather"></p>
-              <img>
-              <p class="high"></p>
-              <p class="low"></p>
-            </div>
-            <div id="day2" class="col-xs-4">
-              <p class="dayOfWeek"></p>
-              <p class="typeWeather"></p>
-              <img>
-              <p class="high"></p>
-              <p class="low"></p>
-            </div>
-            <div id="day3" class="col-xs-4">
-              <p class="dayOfWeek"></p>
-              <p class="typeWeather"></p>
-              <img>
-              <p class="high"></p>
-              <p class="low"></p>
+          <div class="row" id="detailsForNextDays">
+            <div class="verticalAligner">
+              <div id="day1" class="col-xs-4">
+                <p class="day1"></p>
+                <p class="temp1"></p>
+                <img class="image1">
+              </div>
+              <div id="day2" class="col-xs-4">
+                <p class="day2"></p>
+                <p class="temp2"></p>
+                <img class="image2">
+              </div>
+              <div id="day3" class="col-xs-4">
+                <p class="day3"></p>
+                <p class="temp3"></p>
+                <img class="image3">
+              </div>
             </div>
           </div>
+     </div>
+   </div>
   </div>
+  </section> 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
