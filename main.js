@@ -12,7 +12,7 @@ function init(){
   $("#getforecast").click(getCurrentWeather);
   populateCityList();
   $('#currentWeather').on("click", ".removeforecast", removeCard);
-  $('#currentWeather').on("click", "")
+  $('#currentWeather').on("click", ".viewDetails", displayTime);
 }
   // self is the button when ('#currentWeather') is clicked
   // populateCityList();
@@ -47,6 +47,26 @@ function getCurrentWeather(event){
       });
 }
 
+function getNextDaysForecast(event){
+    event.preventDefault();
+
+    // console.log("get next day is working!")
+    city = $(this).closest(".card").find(".cityname").text();   
+    console.log("city", city);
+      $.ajax({
+        url: "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=5a720bb7f76e1bcd2383f4e8c3e196a7&unit",
+        type: "GET",
+        success: function(data){
+          console.log(data);
+          saveNextDaysDetails(data);
+          $('#input').val('')
+        },
+        error: function(err){
+          console.error(err);
+        }
+      });
+}
+
 function saveCityData(data){
 
   var cityData = {};
@@ -65,6 +85,53 @@ function saveCityData(data){
   showCityData(cityData);
 }
 
+function saveNextDaysDetails(data){
+  console.log("save Next Day button is working!")
+  var city_Data = {};
+  // city_Data.temp = data.forecast.temperature.value;
+  // city_Data.weathericon = `http://openweathermap.org/img/w/${list.weather[0].icon}.png`;
+
+  city_Data.tempmax = data.list[0].main.temp_max;
+  city_Data.tempmin = data.list[0].main.temp_min;
+  // city_Data.humidity = data.forecast.humidity.unit;
+  city_Data.name = data.location.name;
+}
+
+function displayTime(data) {
+  console.log(data.list)
+}
+// function showMoreData(cityData) {
+//   console.log("show city:", cityData);
+//   //parse cityData from localStorage, make it into objects
+//   // console.log(cityData);
+
+//     // console.log(data);
+//     // var $card = $('#weatherTemplate').clone();
+//     // $card.removeAttr('id');
+//     var $card = $('#showforecast')
+    
+
+//     $card.find('.temp').text(convertToF(cityData.temp)+"F");
+//     $card.find('.tempmax').text(convertToF(cityData.tempmax)+"F");
+//     $card.find('.tempmin').text(convertToF(cityData.tempmin)+"F");
+//     $card.find('.cityname').text(cityData.name).css('float','right');
+//     $card.find('.weatherdescription').text(cityData.weatherdescription);
+//     $card.find('.weathericon').attr('src', cityData.weathericon);
+//     $card.find('.humidity').text(cityData.humidity+"%");
+//     // add class which has the style for each card, and hide the template
+//     $card.addClass("card");
+
+//     // ADD A DATA ATTRIBUTE TO EACH CARD THAT IDENTIFIES WHAT CITY IT IS
+//     $card.data('cityname', cityData.name)
+//     console.log('card ', $card.data())
+
+    
+//     // // $('.humidity').text(cityData.humidity);
+//     // //set values of temp, tempmax, etc from cityData
+//     $('#currentWeather').append($card);
+
+//     return $card;
+// }
 //   // http://openweathermap.org/img/w/04n.png <<w orks
 //   // dateTime = moment(data.current_observation.local_time_rfc822).format('MMMM Do YYYY,   h:mma');
 
@@ -139,7 +206,7 @@ function convertToF(temp){
 
 }
 
-function viewDetail(){
+function viewDetails(){
 
 }
 

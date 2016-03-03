@@ -51,16 +51,14 @@ h1 {
 	border-radius: 30%
 }
 
-#currentWeather{
-	margin: 0 auto;
-}
-
 .removeforecast{
 	background-color: #ce4c64;
 	color: white;
+	float: left;
 }
 
-.removeforecast{
-	background-color: #ce4c64;
+.viewDetails{
+	background-color: #46c948;
 	color: white;
+	float: right;
 }
